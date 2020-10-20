@@ -5,6 +5,7 @@ import com.appcarpe.appcarpeserver.entity.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "lieu", schema = "public")
@@ -14,6 +15,7 @@ public class Lieu {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @NotNull
     private String name;
 
     @Column(name = "prix_24")
