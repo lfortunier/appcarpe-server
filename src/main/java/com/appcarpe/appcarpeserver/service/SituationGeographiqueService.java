@@ -20,7 +20,7 @@ public class SituationGeographiqueService {
     public SituationGeographique getSituationGeographique(SituationGeographique situationGeographique) {
         SituationGeographique sGResult = null;
         if (situationGeographique != null) {
-            Optional<SituationGeographique> sGBodySearch = situationGeographiqueRepository.findByCodePostalAndAndNomVille(situationGeographique.getCodePostal(), situationGeographique.getNomVille());
+            Optional<SituationGeographique> sGBodySearch = situationGeographiqueRepository.findByCodePostalAndNomVilleAndDepartement(situationGeographique.getCodePostal(), situationGeographique.getNomVille(), situationGeographique.getDepartement());
             if (sGBodySearch.isPresent()){
                 sGResult = sGBodySearch.get();
             }else {

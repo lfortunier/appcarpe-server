@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface SituationGeographiqueRepository extends JpaRepository<SituationGeographique, Integer> {
-    Optional<SituationGeographique> findByCodePostalAndAndNomVille(String codePostal, String nomVille);
+    Optional<SituationGeographique> findByCodePostalAndNomVilleAndDepartement(String codePostal, String nomVille, String departement);
 }

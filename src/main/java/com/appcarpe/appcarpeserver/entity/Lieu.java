@@ -44,6 +44,13 @@ public class Lieu {
 
     private String commentaire;
 
+    private Double longitude;
+
+    private Double latitude;
+
+    @Column(name = "synchronisation_map")
+    private Boolean synchronisationMap;
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_situation_geographique")
     private SituationGeographique situationGeographique;
@@ -151,6 +158,30 @@ public class Lieu {
 
     public void setCommentaire(String commentaire) {
         this.commentaire = commentaire;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
+    }
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Boolean getSynchronisationMap() {
+        return synchronisationMap;
+    }
+
+    public void setSynchronisationMap(Boolean synchronisationMap) {
+        this.synchronisationMap = synchronisationMap;
     }
 
     public SituationGeographique getSituationGeographique() {
